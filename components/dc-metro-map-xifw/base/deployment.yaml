@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: dc-metro-map-xifw
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: dc-metro-map-xifw
+    app.kubernetes.io/part-of: my-app-2
+  name: dc-metro-map-xifw
+  namespace: karthik-jk-tenant
+spec:
+  replicas: 1
+  revisionHistoryLimit: 0
+  selector:
+    matchLabels:
+      app.kubernetes.io/instance: dc-metro-map-xifw
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app.kubernetes.io/instance: dc-metro-map-xifw
+    spec:
+      containers:
+      - image: image
+        imagePullPolicy: Always
+        name: container-image
+        ports:
+        - containerPort: 8080
+        resources:
+          requests:
+            cpu: 10m
+            memory: 50Mi
+status: {}

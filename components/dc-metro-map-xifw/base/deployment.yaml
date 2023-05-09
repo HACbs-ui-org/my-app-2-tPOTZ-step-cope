@@ -24,7 +24,10 @@ spec:
         app.kubernetes.io/instance: dc-metro-map-xifw
     spec:
       containers:
-      - image: image
+      - env:
+        - name: test
+          value: test
+        image: image
         imagePullPolicy: Always
         name: container-image
         ports:
